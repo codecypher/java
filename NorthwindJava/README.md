@@ -1,6 +1,6 @@
 # NorthwindJava
 
-Sample web application using Java and Northwind SQL Server database.
+Sample web application using Java eclipse and Northwind SQL Server database.
 
 The Northwind database script can be found <a href="https://www.microsoft.com/en-us/download/details.aspx?id=23654" alt="Nortwind script">here</a>
 

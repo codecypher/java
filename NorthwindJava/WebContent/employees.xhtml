@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title>Employee JPA Example</title>
+	<!-- <h:outputStylesheet library="css" name="default.css"/> -->
+</h:head>
+<body>
+
+	<h:dataTable
+	    var="employee"
+	    summary="Table of Employees"
+	    value="#{northwindManager.employees}"
+	    rules="all"
+	    cellpadding="5">
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="Employee ID" />
+	        </f:facet>
+            <h:outputText value="#{employee.employeeID}" />
+<!-- 
+            <h:form>
+                <h:commandLink id="order_id_link" action="lineItem">
+                    <h:outputText value="#{order.orderId}" />
+                    <f:setPropertyActionListener target="#{orderManager.currentOrder}" value="#{order.orderId}" />
+                </h:commandLink>
+            </h:form>
+-->
+	    </h:column>
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="First Name" />
+	        </f:facet>
+	        <h:outputText value="#{employee.firstName}" />
+	    </h:column>
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="Last Name" />
+	        </f:facet>
+	        <h:outputText value="#{employee.lastName}" />
+	    </h:column>
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="Birth Date" />
+	        </f:facet>
+	        <h:outputText value="#{employee.birthDate}" />
+	    </h:column>
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="Hire Date" />
+	        </f:facet>
+	        <h:outputText value="#{employee.hireDate}" />
+	    </h:column>
+<!-- 
+	    <h:column>
+	        <f:facet name="header">
+	            <h:outputText value="Actions" />
+	        </f:facet>
+	        <h:form>
+	            <h:commandLink value="Delete" actionListener="#{orderManager.removeOrder}" action="order">
+	                <f:param name="deleteOrderId" id="deleteOrderId" value="#{order.orderId}" />
+	            </h:commandLink>
+	        </h:form>
+	    </h:column>
+-->
+	</h:dataTable>
+</body>    
+</html>

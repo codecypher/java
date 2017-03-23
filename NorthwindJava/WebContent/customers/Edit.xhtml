@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCustomersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_customerID}" for="customerID" />
+                    <h:inputText id="customerID" value="#{customersController.selected.customerID}" title="#{bundle.EditCustomersTitle_customerID}" required="true" requiredMessage="#{bundle.EditCustomersRequiredMessage_customerID}"/>
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_companyName}" for="companyName" />
+                    <h:inputText id="companyName" value="#{customersController.selected.companyName}" title="#{bundle.EditCustomersTitle_companyName}" required="true" requiredMessage="#{bundle.EditCustomersRequiredMessage_companyName}"/>
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_contactName}" for="contactName" />
+                    <h:inputText id="contactName" value="#{customersController.selected.contactName}" title="#{bundle.EditCustomersTitle_contactName}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_contactTitle}" for="contactTitle" />
+                    <h:inputText id="contactTitle" value="#{customersController.selected.contactTitle}" title="#{bundle.EditCustomersTitle_contactTitle}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_address}" for="address" />
+                    <h:inputText id="address" value="#{customersController.selected.address}" title="#{bundle.EditCustomersTitle_address}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_city}" for="city" />
+                    <h:inputText id="city" value="#{customersController.selected.city}" title="#{bundle.EditCustomersTitle_city}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_region}" for="region" />
+                    <h:inputText id="region" value="#{customersController.selected.region}" title="#{bundle.EditCustomersTitle_region}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_postalCode}" for="postalCode" />
+                    <h:inputText id="postalCode" value="#{customersController.selected.postalCode}" title="#{bundle.EditCustomersTitle_postalCode}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_country}" for="country" />
+                    <h:inputText id="country" value="#{customersController.selected.country}" title="#{bundle.EditCustomersTitle_country}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_phone}" for="phone" />
+                    <h:inputText id="phone" value="#{customersController.selected.phone}" title="#{bundle.EditCustomersTitle_phone}" />
+                    <h:outputLabel value="#{bundle.EditCustomersLabel_fax}" for="fax" />
+                    <h:inputText id="fax" value="#{customersController.selected.fax}" title="#{bundle.EditCustomersTitle_fax}" />
+                </h:panelGrid>
+                <h:commandLink action="#{customersController.update}" value="#{bundle.EditCustomersSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCustomersViewLink}"/>
+                <br />
+                <h:commandLink action="#{customersController.prepareList}" value="#{bundle.EditCustomersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCustomersIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

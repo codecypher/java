@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="#{bundle.ViewEmployeesTitle}"></h:outputText>
+	</ui:define>
+	<ui:define name="body">
+		<h:panelGroup id="messagePanel" layout="block">
+			<h:messages errorStyle="color: red" infoStyle="color: green"
+				layout="table" />
+		</h:panelGroup>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="#{bundle.ViewEmployeesLabel_employeeID}" />
+				<h:outputText value="#{employeesController.selected.employeeID}"
+					title="#{bundle.ViewEmployeesTitle_employeeID}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_lastName}" />
+				<h:outputText value="#{employeesController.selected.lastName}"
+					title="#{bundle.ViewEmployeesTitle_lastName}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_firstName}" />
+				<h:outputText value="#{employeesController.selected.firstName}"
+					title="#{bundle.ViewEmployeesTitle_firstName}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_title}" />
+				<h:outputText value="#{employeesController.selected.title}"
+					title="#{bundle.ViewEmployeesTitle_title}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_titleOfCourtesy}" />
+				<h:outputText
+					value="#{employeesController.selected.titleOfCourtesy}"
+					title="#{bundle.ViewEmployeesTitle_titleOfCourtesy}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_birthDate}" />
+				<h:outputText value="#{employeesController.selected.birthDate}"
+					title="#{bundle.ViewEmployeesTitle_birthDate}">
+					<f:convertDateTime pattern="MM/dd/yyyy" />
+				</h:outputText>
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_hireDate}" />
+				<h:outputText value="#{employeesController.selected.hireDate}"
+					title="#{bundle.ViewEmployeesTitle_hireDate}">
+					<f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+				</h:outputText>
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_address}" />
+				<h:outputText value="#{employeesController.selected.address}"
+					title="#{bundle.ViewEmployeesTitle_address}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_city}" />
+				<h:outputText value="#{employeesController.selected.city}"
+					title="#{bundle.ViewEmployeesTitle_city}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_region}" />
+				<h:outputText value="#{employeesController.selected.region}"
+					title="#{bundle.ViewEmployeesTitle_region}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_postalCode}" />
+				<h:outputText value="#{employeesController.selected.postalCode}"
+					title="#{bundle.ViewEmployeesTitle_postalCode}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_country}" />
+				<h:outputText value="#{employeesController.selected.country}"
+					title="#{bundle.ViewEmployeesTitle_country}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_homePhone}" />
+				<h:outputText value="#{employeesController.selected.homePhone}"
+					title="#{bundle.ViewEmployeesTitle_homePhone}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_extension}" />
+				<h:outputText value="#{employeesController.selected.extension}"
+					title="#{bundle.ViewEmployeesTitle_extension}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_photo}" />
+				<h:outputText value="#{employeesController.selected.photo}"
+					title="#{bundle.ViewEmployeesTitle_photo}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_notes}" />
+				<h:outputText value="#{employeesController.selected.notes}"
+					title="#{bundle.ViewEmployeesTitle_notes}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_photoPath}" />
+				<h:outputText value="#{employeesController.selected.photoPath}"
+					title="#{bundle.ViewEmployeesTitle_photoPath}" />
+
+				<h:outputText value="#{bundle.ViewEmployeesLabel_reportsTo}" />
+				<h:outputText value="#{employeesController.selected.reportsTo}"
+					title="#{bundle.ViewEmployeesTitle_reportsTo}" />
+			</h:panelGrid>
+			<br />
+			<h:commandLink action="#{employeesController.destroyAndView}"
+				value="#{bundle.ViewEmployeesDestroyLink}" />
+			<br />
+			<br />
+			<h:link outcome="Edit" value="#{bundle.ViewEmployeesEditLink}" />
+			<br />
+			<h:commandLink action="#{employeesController.prepareCreate}"
+				value="#{bundle.ViewEmployeesCreateLink}" />
+			<br />
+			<h:commandLink action="#{employeesController.prepareList}"
+				value="#{bundle.ViewEmployeesShowAllLink}" />
+			<br />
+			<br />
+			<h:link outcome="/index" value="#{bundle.ViewEmployeesIndexLink}" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

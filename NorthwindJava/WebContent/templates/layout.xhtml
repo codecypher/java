@@ -1,0 +1,62 @@
+<!-- 
+  How to include another XHTML in XHTML using JSF 2.0 Facelets?
+  http://stackoverflow.com/questions/4792862/how-to-include-another-xhtml-in-xhtml-using-jsf-2-0-facelets
+
+  JSF Templating with Facelets Example
+  http://www.mkyong.com/jsf2/jsf-2-templating-with-facelets-example/
+
+  JSF Page Templates With Facelets
+  http://www.andygibson.net/blog/programming/jsf-page-templates-with-facelets/
+ -->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen, handheld"/> -->
+	
+	<h:outputStylesheet name="normalize.css" library="css"/>
+	<h:outputStylesheet name="bootstrap.min.css" library="css"/>
+	<h:outputStylesheet name="bootstrap-theme.min.css" library="css"/>
+	<h:outputStylesheet name="main.css" library="css"/>
+
+	<h:outputScript name="modernizr-2.8.3.min.js" library="js"/>
+
+	<title><ui:insert name="title">Default Title</ui:insert></title>
+</h:head>
+<h:body>
+
+	<div id="page">
+
+	    <ui:debug/>
+	    
+	    <div id="content">
+			<h2><ui:insert name="heading">Default Header</ui:insert></h2>
+			<!-- 
+			  Uses ui:include tag to provide default content if no replacement is specified 
+			  when the template is used. 
+			-->
+		  	<ui:insert name="content">
+				<ui:include src="/templates/content.xhtml" />
+		   	</ui:insert>
+	    </div>
+
+	    <div id="footer">
+	    	<ui:insert name="footer">
+	    	  <ui:include src="/templates/footer.xhtml" />
+	    	</ui:insert>
+    	</div>
+    
+    </div>
+
+</h:body>
+</html>    

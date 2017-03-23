@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<ui:composition template="templates/layout.xhtml"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:define name="title">Show Customer</ui:define>
+	<ui:define name="heading">Show Customer</ui:define>
+	
+	<ui:define name="content">
+		<h:form class="form-horizontal">
+			<h:messages styleClass="error"/><br/>
+		
+			<div class="row">
+				<div class="form-group">
+					<label for="customerID" class="col-sm-2 control-label">CustomerID</label> 
+					<h:inputText id="customerID" value="#{northwindManager.customer.customerID}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="companyName" class="col-sm-2 control-label">CompanyName</label> 
+					<h:inputText id="companyName" value="#{northwindManager.customer.companyName}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="contactName" class="col-sm-2 control-label">ContactName</label> 
+					<h:inputText id="contactName" value="#{northwindManager.customer.contactName}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="contactTitle" class="col-sm-2 control-label">ContactTitle</label> 
+					<h:inputText id="contactTitle" value="#{northwindManager.customer.contactTitle}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="address" class="col-sm-2 control-label">Address</label> 
+					<h:inputText id="address" value="#{northwindManager.customer.address}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="city" class="col-sm-2 control-label">City</label> 
+					<h:inputText id="city" value="#{northwindManager.customer.city}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="region" class="col-sm-2 control-label">Region</label> 
+					<h:inputText id="region" value="#{northwindManager.customer.region}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="postalCode" class="col-sm-2 control-label">PostalCode</label> 
+					<h:inputText id="postalCode" value="#{northwindManager.customer.postalCode}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="country" class="col-sm-2 control-label">Country</label> 
+					<h:inputText id="country" value="#{northwindManager.customer.country}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="phone" class="col-sm-2 control-label">Phone</label> 
+					<h:inputText id="phone" value="#{northwindManager.customer.phone}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+					
+			<div class="row">
+				<div class="form-group">
+					<label for="fax" class="col-sm-2 control-label">Fax</label> 
+					<h:inputText id="fax" value="#{northwindManager.customer.fax}" class="col-sm-6"/><br/>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="form-group">
+					<h:commandButton value="Save" action="#{northwindManager.saveCustomer}" class="col-sm-offset-2 col-sm-2" />
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+       
+</ui:composition>
+
